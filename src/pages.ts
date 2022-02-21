@@ -1,4 +1,5 @@
 import { Page } from './page';
+import { PagesIterable } from './PagesIterable';
 //'Comics: Spider-Man by Stan Lee, the artist is , number of pages: 1, here is page with images # and it's material is glossy paper'
 //'Magazine: G.Q with number of pages: 2, here is page with article #1 and it's material is glossy paper'
 export class Pages {
@@ -7,13 +8,8 @@ export class Pages {
         this.pages = pages;
     }
 
-    [Symbol.iterator]() {
-        let index = -1;
-        let data = this.pages ?? [];
-
-        return {
-            next: () => ({ value: data[++index], done: !(index in data) })
-        }
+    [Symbol.iterator](prefix: string) {
+        return PagesIterable(this.pages, prefix);
     }
     /*next() {
         pages

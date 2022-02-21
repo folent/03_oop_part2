@@ -9,7 +9,10 @@ export abstract class Item  {
     abstract getPages(): Pages;
 
     [Symbol.iterator]() {
-        return this.getPages()[Symbol.iterator]();
+        const pages = this.getPages();
+        const prefix = this.toString();
+
+       return pages[Symbol.iterator](prefix);
     }
 
     abstract toString(): string;

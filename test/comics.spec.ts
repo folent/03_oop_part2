@@ -11,7 +11,7 @@ describe('Comics', () => {
     ]));
 
     for (const page of comics) {
-      expect(page.toString()).toEqual(`Comics: Spider-Man by Stan Lee, the artist is some author, number of pages: 2, here is page with images #${counter} and it\'s material is glossy paper`);
+      expect(page.toString()).toEqual(`Comics: Spider-Man by some author, the artist is Stan Lee, number of pages: 2, here is page with images #${counter} and it\'s material is glossy paper`);
       counter++;
     }
   });
