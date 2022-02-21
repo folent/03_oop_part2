@@ -1,12 +1,20 @@
 import { Item } from './item';
 import { Pages } from './pages';
-import { Page } from './page';
 
 export class Book extends Item {
+    pages: Pages;
+    author: string;
+    title: string;
 
     constructor(title: string, author: string, pages: Pages) {
-        super(title, author, pages);
+        super();
         this.pages = pages;
+        this.author = author;
+        this.title = title;
+    }
+
+    getPages(): Pages {
+        return this.pages;
     }
 
     toString(): string {

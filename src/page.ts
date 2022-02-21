@@ -1,7 +1,7 @@
 export class Page {
     pageNumber: number;
-    pageType: string;
-    pageMaterial: string;
+    pageType: string; // should be type
+    pageMaterial: string;// should be type
     constructor(pageNumber: number, pageType: string, pageMaterial: string) {
         this.pageNumber = pageNumber;
         this.pageType = pageType;
